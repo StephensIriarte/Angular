@@ -1,0 +1,11 @@
+
+<h3>Listado de Alumnos:</h3>
+ <form>
+    
+    <li *ngFor="let alum of alumnos">
+            <p>Nombre: {{alum["nombre"]}}</p>
+            <p>Asignatura: {{alum["asignatura"]}}</p>
+            <p>Nota: {{alum["nota"]}}</p>
+            <p *ngIf="alum.nota>=4 ; else textRepite " class="bg-green-600" >Paso de Curso</p>
+            <ng-template #textRepite><p class="bg-red-300">Repitio</p></ng-template>
+</form>
