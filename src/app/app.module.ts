@@ -7,6 +7,8 @@ import { NavComponentComponent } from './components/nav-component/nav-component.
 import { AsideComponentComponent } from './components/aside-component/aside-component.component';
 import { MainComponentComponent } from './components/main-component/main-component.component';
 import { ListadoComponent } from './components/listado/listado.component';
+import { FormIngresoComponent } from './components/form-ingreso/form-ingreso.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { ListadoComponent } from './components/listado/listado.component';
     NavComponentComponent,
     AsideComponentComponent,
     MainComponentComponent,
-    ListadoComponent
+    ListadoComponent,
+    FormIngresoComponent
   ],
   imports: [
     BrowserModule,
