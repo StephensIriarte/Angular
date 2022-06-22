@@ -8,7 +8,7 @@ import { AsideComponentComponent } from './components/aside-component/aside-comp
 import { MainComponentComponent } from './components/main-component/main-component.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { FormIngresoComponent } from './components/form-ingreso/form-ingreso.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,9 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
