@@ -1,0 +1,47 @@
+
+<form id="contactForm" [formGroup]="form" (ngSubmit)="submit()" class="w-full">
+
+  
+    <div class="grid auto-rows-auto grid-cols-6 gap-3">
+
+        <div class="col-span-6">
+            <div class="flex flex-row justify-center">
+              <span class="text-4xl font-bold">Formulario Alumno</span>
+            </div>
+        </div>
+
+        <div class="col-span-6">
+            <mat-form-field>
+                <input matInput placeholder="Nombre" formControlName="firstname" class="form-control"  name="firstname">
+            </mat-form-field>
+        </div>
+   
+        <br>
+
+        <div class="col-span-6">
+            <mat-form-field>
+                <input matInput placeholder="Apellido" formControlName="lastname" class="form-control"  name="lastname">
+            </mat-form-field>
+        </div>
+
+        <div class="col-span-6">
+            <mat-form-field>
+                <input matInput placeholder="Edad" formControlName="edad" class="form-control"  name="edad">
+            </mat-form-field>
+        </div>
+
+        <br>
+
+        <div class="col-span-6">
+            <mat-form-field>
+                <input matInput placeholder="email" formControlName="email" class="form-control"  name="email">
+            </mat-form-field>
+        </div>
+
+      
+        <br>
+        
+        <br>
+        <button id="btnSubmit" mat-raised-button type="submit" color="primary">Agregar</button>
+    </div>    
+</form>
