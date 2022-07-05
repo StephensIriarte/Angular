@@ -4,14 +4,16 @@
   </button>
     <span>Proyecto Angular</span>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item >
-        <mat-icon>dialpad</mat-icon>
-        <span>Listar Alumnos</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>voicemail</mat-icon>
-        <span>Agregar Alumno</span>
-      </button>
+      <li>
+      
+        <a routerLink="/listar">Listar</a>
+      </li>
+        <li>
+         
+          <a routerLink="/alumno">Agregar Alumno</a>
+        
+       
+      </li>
       <button mat-menu-item>
         <mat-icon>notifications_off</mat-icon>
         <span>Disable alerts</span>
@@ -19,3 +21,5 @@
     </mat-menu>
     
   </mat-toolbar>
+
+

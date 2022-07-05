@@ -27,6 +27,7 @@ import { AddAlumnoComponent } from './components/add-alumno/add-alumno.component
   ],
   imports: [
     BrowserAnimationsModule,
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
