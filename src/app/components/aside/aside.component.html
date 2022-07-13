@@ -1,12 +1,28 @@
-<mat-sidenav-container class="example-container" *ngIf="shouldRun">
-    
-  
-    <mat-sidenav-content>
-    
+<mat-sidenav mode="side" opened>
       
-      <p>Events:</p>
-      <div class="example-events">
-        <div *ngFor="let e of events">{{e}}</div>
-      </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+      <h4 class="name">Stephens Iriarte</h4>
+      <p class="designation">Administrador</p>
+
+      <mat-divider></mat-divider>
+
+
+      <button mat-button class="menu-button">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-button class="menu-button" >
+          <mat-icon>person</mat-icon>
+          <span>Alumnos</span>
+      </button>
+      <button mat-button class="menu-button">
+          <mat-icon>info</mat-icon>
+          <span>Agregar Alumno</span>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button">
+          <mat-icon>help</mat-icon>
+          <span>Ayuda</span>
+      </button>
+  </mat-sidenav>

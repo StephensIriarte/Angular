@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder } from '@angular/forms'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 
+
 @Component({
   selector: 'app-add-alumno',
   templateUrl: './add-alumno.component.html',

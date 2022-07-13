@@ -25,6 +25,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -53,6 +57,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatInputModule,
     MatTableModule,
     MatMenuModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatRadioModule,
+    MatSelectModule,
     TranslateModule.forRoot({
       loader:{
         provide: TranslateLoader,
@@ -63,7 +71,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     })
   
   ],
-  providers: [ThemeInitializerProvider],
+  providers: [],
   bootstrap: [AppComponent]
   
 })

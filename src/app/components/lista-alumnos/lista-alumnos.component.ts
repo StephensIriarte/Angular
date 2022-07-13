@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ListaAlumnosComponent  implements OnInit {
 
-  displayedColumnsTable = ['index', 'nombre', 'apepat', 'apemat' ,'edad', 'email']
+  displayedColumnsTable = ['index', 'nombre', 'apepat', 'apemat' ,'edad', 'email', 'action']
   tableDataSource$: Observable<MatTableDataSource<User>>;
 
   userSelect: User | null = null;
@@ -23,6 +23,9 @@ export class ListaAlumnosComponent  implements OnInit {
     this.tableDataSource$ = this.userService.getUsers().pipe(tap((users) => console.log(users)),
                                                             map((users) => new MatTableDataSource<User>(users)));
   }
+
+
+
 
   ngOnDestroy(){
     this.susbcriptions.unsubscribe();
