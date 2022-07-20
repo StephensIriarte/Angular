@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, map, of, Subject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject, catchError, map, of, Subject, Observable } from 'rxjs';
 import { User } from '../models/user.model';
 
 @Injectable({
@@ -7,63 +8,43 @@ import { User } from '../models/user.model';
 })
 export class UserService {
 
-  userList:User[] = [
-    {
-        nombre: 'Maria',
-        apepat: 'Perez',
-        apemat: 'Perez',
-        edad: 15,
-        email: 'prueba@a.cl'  
-    },
-    {
-        nombre: 'Jose',
-        apepat: 'Fuentes',
-        apemat: 'Pardo',
-        edad: 17,
-        email: 'prueba2@a.cl'  
-    
-    },
-    {
-        nombre: 'Juan',
-        apepat: 'Sanchez',
-        apemat: 'Vidal',
-        edad: 18,
-        email: 'prueba3@a.cl'  
-    },
-    {
-        nombre: 'Luis',
-        apepat: 'Medel',
-        apemat: 'Rodriguez',
-        edad: 16,
-        email: 'prueba4@a.cl'  
-    }
-  ]
+  userList:User[] = []
 
   userSelected$ = new Subject<User | null>();
   users$ = new BehaviorSubject<User[]>(this.userList);
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   addUser(user:User){
     this.userList.push(user)
     this.users$.next(this.userList)
   }
 
-  getUsers(){
-    return this.users$.asObservable()
+  getUsers(nombre?:string): Observable<User[]>{
+    return this.httpClient.get<User[]>('https://62ce1a8e066bd2b6992fe620.mockapi.io/'+'Alumnos',{headers: new HttpHeaders({
+      "authorization": 'token'
+    })}).pipe(
+      map((users) => {
+        return nombre ? users.filter(user =>  (user.nombre.toLowerCase() + ' ' + user.apepat.toLowerCase()).includes(nombre.toLowerCase())) : users
+      }),
+      catchError((error) => {
+        console.log(error)
+        throw new Error()
+      })
+    );
   }
 
   getUserSelect(){
     return this.userSelected$.asObservable()
   }
 
-  selectUserByIndex(index?: number){
-    this.userSelected$.next(index !== undefined ? this.userList[index] : null)
+  selectUserById(id: number): Observable<User>{
+    //this.userSelected$.next(this.userList.find(user => user.id === id) || null)
+    return this.httpClient.get<User>('https://62ce1a8e066bd2b6992fe620.mockapi.io/'+'Alumnos/'+id);
   }
 
-  deleteUserByIndex(index?: number){
-    this.userList = this.userList.filter((_, i) => index != i)
-    this.users$.next(this.userList)
+  deleteUserById(id: number){
+    return this.httpClient.delete('https://62ce1a8e066bd2b6992fe620.mockapi.io/'+'Alumnos/'+id);
   }
 
   searchUsersByName(name: string){

@@ -12,10 +12,10 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ListaAlumnosComponent  implements OnInit {
 
-  displayedColumnsTable = ['index', 'nombre', 'apepat', 'apemat' ,'edad', 'email', 'action']
+  displayedColumnsTable = ['index', 'nombre', 'apepat', 'apemat' , 'email', 'action']
   tableDataSource$: Observable<MatTableDataSource<User>>;
 
-  userSelect: User | null = null;
+  userSelect$: Observable<User> | null = null
 
   susbcriptions: Subscription = new Subscription();
 
@@ -35,7 +35,7 @@ export class ListaAlumnosComponent  implements OnInit {
     this.susbcriptions.add(
       this.userService.getUserSelect().subscribe({
           next: (user) => {
-            this.userSelect = user
+            
           }, error : (error) => {
             console.error(error)
           }
@@ -43,12 +43,20 @@ export class ListaAlumnosComponent  implements OnInit {
     )
   }
 
-  selectUser(index?: number){
-    this.userService.selectUserByIndex(index)
+  selectUser(id: number){
+    this.userSelect$ = this.userService.selectUserById(id)
   }
 
-  deleteUser(index?: number){
-    this.userService.deleteUserByIndex(index)
+  deleteUser(id: number){
+    this.userService.deleteUserById(id).subscribe((resp) => {
+      console.log(resp);
+    })
+    this.getUsers();
+  }
+
+  getUsers(){
+    this.tableDataSource$ = this.userService.getUsers().pipe(tap((users) => console.log(users)),
+                                                            map((users) => new MatTableDataSource<User>(users)));
   }
 
 }
