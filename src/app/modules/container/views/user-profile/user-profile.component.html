@@ -1,0 +1,97 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Editar Usuario</h4>
+                         <p class="card-category">Complete Datos</p>
+                    </div>
+                    <div class="card-body">
+                            <form [formGroup]="myForm" class="w-full" (submit)="null">
+                                <div class="grid auto-rows-auto grid-cols-6 gap-3">
+            
+                                <div class="col-span-6 sm:col-span-3">
+                                    <mat-form-field class="w-full" appearance="fill">
+                                    <mat-label>Nombre</mat-label>
+                                    <input matInput formControlName="nombre">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-span-6 sm:col-span-3">
+                                    <mat-form-field class="w-full" appearance="fill">
+                                        <mat-label>Apellido Paterno</mat-label>
+                                    <input matInput formControlName="apepat">
+                                    </mat-form-field>
+                                </div>
+                          
+                                <div class="col-span-4">
+                                    <mat-form-field class="w-full" appearance="fill">
+                                    <mat-label>{{"registerFormComponent.form.emailField" | translate}}</mat-label>
+                                    <input matInput formControlName="email">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-span-6">
+                                    <mat-form-field class="w-full" appearance="fill">
+                                    <mat-label>{{"registerFormComponent.form.addressField" | translate}}</mat-label>
+                                    <textarea matInput placeholder="Ex. 100 Main St" formControlName="address">1600 Amphitheatre Pkwy</textarea>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-span-3 sm:col-span-2">
+                                    <mat-form-field class="w-full" appearance="fill">
+                                    <mat-label>{{"registerFormComponent.form.countryField" | translate}}</mat-label>
+                                    <input matInput placeholder="Ex. San Francisco" formControlName="country">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-span-3 sm:col-span-2">
+                                    <mat-form-field class="w-full" appearance="fill">
+                                    <mat-label>{{"registerFormComponent.form.cityField" | translate}}</mat-label>
+                                    <input matInput placeholder="Ex. California" formControlName="city">
+                                    </mat-form-field>
+                                </div>
+
+                            
+                                
+                                <div class="col-span-6">
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                                    
+                                    <div class="col-span-1">
+                                    
+                                    </div>
+                                    <div class="col-span-1">
+                                        <button mat-raised-button type="submit" class="btn btn-danger pull-right">Actualizar</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                   
+
+
+
+                    <form [formGroup]="myForm" class="w-full" (submit)="null">
+             
+                        <div class="card-avatar">
+                           
+                                <img class="img" src="./assets/img/faces/marc.jpg" />
+                         
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-category text-gray">Clase Angular</h6>
+                            <h4 class="card-title"><input matInput formControlName="nombre"></h4>
+                            <span class="card-category text-gray">{{currentDate | date : 'medium'}}</span>
+                                                      
+                            
+                        </div>
+                    </form>    
+                </div>
+            </div>
+    </div>
+  </div>
+  

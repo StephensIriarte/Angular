@@ -1,23 +1,18 @@
-
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddAlumnoComponent } from './components/add-alumno/add-alumno.component';
-import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.component';
-import { ListaCursoComponent } from './components/curso/lista-curso/lista-curso.component';
+import { Auth2Guard } from './guards/auth2/auth2.guard';
 
 const routes: Routes = [
-{ path: 'alumno', component: AddAlumnoComponent},
-{ path: 'listar', component: ListaAlumnosComponent },
-{ path: 'cursos', component: ListaCursoComponent }
+  { path: 'login', loadChildren: () => import('./modules/login/login.module').then(m => m.LoginModule) },
+  { path: '', canActivateChild:[Auth2Guard], loadChildren: () => import('./modules/container/container.module').then(m => m.ContainerModule) },
+  {
+    path:'**',
+    redirectTo: ''
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
-
-
-
 export class AppRoutingModule { }
-

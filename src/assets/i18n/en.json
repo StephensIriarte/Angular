@@ -1,0 +1,41 @@
+{
+  "navBarComponent":{
+    "titleApp": "My app",
+    "languageES": "Spanish",
+    "languageEN": "English",
+    "tooltipThemeModeLight": "Switch to light mode",
+    "tooltipThemeModeDark": "Switch to dark mode",
+    "tooltipLogout": "Log out"
+  },
+  "userListComponent": {
+    "titleTable": "User's list",
+    "table":{
+      "positionColumn": "N°",
+      "firstNameColumn": "First Name",
+      "lastNameColumn": "Last Name",
+      "emailColumn": "Email",
+      "countryColumn": "Country"
+    },
+    "labelSearchInput": "Search user",
+    "labelButtonLoadUser": "Load users",
+    "labelUserSelected": "Selected user",
+    "labelUserNoSelected":"No user selected"
+  },
+  "registerFormComponent":{
+    "textToUrl": "This comes from the FormComponent",
+    "titleForm" : "Form",
+    "form":{
+      "firstNameField": "First name",
+      "lastNameField": "Last name",
+      "ageField": "Age",
+      "emailField": "Email",
+      "addressField": "Address",
+      "countryField": "Country",
+      "cityField": "City",
+      "postalCodeField": "Postal Code",
+      "resetButton": "Reset",
+      "addButton": "Add",
+      "showUserButton": "Show user"
+    }
+  }
+}

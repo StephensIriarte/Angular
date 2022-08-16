@@ -1,8 +1,16 @@
 export interface User{
-    nombre: string,
-    apepat: string,
-    apemat: string,
-    edad: number,
-    email: string
-    
-  }
+  id: number;
+  nombre: string;
+  apepat: string;
+  edad: number;
+  email: string;
+  address: string;
+  country: string;
+  city: string;
+  createdAt: string;
+  avatar: string;
+  postalCode: number;
+  token: string;
+  password: string;
+  username: string
+}

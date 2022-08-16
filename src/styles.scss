@@ -1,0 +1,6 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './app/theme/theme.scss';
+@include cust-theme($custom-light-theme);

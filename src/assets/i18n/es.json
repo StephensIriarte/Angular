@@ -1,0 +1,41 @@
+{
+  "navBarComponent":{
+    "titleApp": "Mi aplicación",
+    "languageES": "Español",
+    "languageEN": "Ingles",
+    "tooltipThemeModeLight": "Cambiar a modo claro",
+    "tooltipThemeModeDark": "Cambiar a modo oscuro",
+    "tooltipLogout": "Cerrar sesión"
+  },
+  "userListComponent": {
+    "titleTable": "Lista de usuarios",
+    "table":{
+      "positionColumn": "N°",
+      "firstNameColumn": "Nombres",
+      "lastNameColumn": "Apellidos",
+      "emailColumn": "Correo",
+      "countryColumn": "País"
+    },
+    "labelSearchInput": "Buscar usuario",
+    "labelButtonLoadUser": "Cargar usuarios",
+    "labelUserSelected": "Usuario seleccionado",
+    "labelUserNoSelected":"No hay usuario seleccionado"
+  },
+  "registerFormComponent":{
+    "textToUrl": "Esto viene del FormComponent",
+    "titleForm" : "Formulario",
+    "form":{
+      "firstNameField": "Nombres",
+      "lastNameField": "Apellidos",
+      "ageField": "Edad",
+      "emailField": "Correo",
+      "addressField": "Dirección",
+      "countryField": "Pais",
+      "cityField": "Ciudad",
+      "postalCodeField": "Codigo postal",
+      "resetButton": "Reiniciar",
+      "addButton": "Agregar",
+      "showUserButton": "Ver usuario"
+    }
+  }
+}
