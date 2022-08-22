@@ -1,4 +1,6 @@
+import { ClasesModule } from './views/clases/clases.module';
 import { salirModule } from './views/salir/salir.module';
+
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -30,6 +32,11 @@ const routes: Routes = [
     path:'salir',
     component: ContainerComponent,
     loadChildren: () => import('./views/salir/salir.module').then((m) => m.salirModule)
+  },
+  {
+    path:'clases',
+    component: ContainerComponent,
+    loadChildren: () => import('./views/clases/clases.module').then((m) => m.ClasesModule)
   },
 
   {
