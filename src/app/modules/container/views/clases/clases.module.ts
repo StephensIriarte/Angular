@@ -4,7 +4,8 @@ import { ClasesComponent } from './clases.component';
 import { ClasesRoutingModule } from './clases.routing.module';
 import { MatTableModule } from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateForChildModule } from 'src/app/shared/translate-for-child.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     CommonModule,
     ClasesRoutingModule,
     MatTableModule,
-    MatFormFieldModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    TranslateForChildModule
   ]
 })
 export class ClasesModule { }

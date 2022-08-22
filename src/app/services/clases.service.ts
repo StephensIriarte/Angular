@@ -11,6 +11,7 @@ export class ClasesService {
   clasesList:Clases[] = [];
   clasesSelected$ = new BehaviorSubject<Clases | null>(null);
   clases$ = new BehaviorSubject<Clases[]>(this.clasesList);
+  private baseURL = 'https://62ce1a8e066bd2b6992fe620.mockapi.io/'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -41,10 +42,16 @@ export class ClasesService {
     return this.httpClient.delete('https://62ce1a8e066bd2b6992fe620.mockapi.io/'+'clases/'+id);
   }
 
-  updateDate(data: Clases){
-    return this.httpClient.put('https://62ce1a8e066bd2b6992fe620.mockapi.io/'+'clases/'+data.id, data);
+  
+
+  updateData(data: any, id: string): Observable<any> {
+    return this.httpClient.put(`${this.baseURL}clases/${id}`, data)
   }
 
+  addClase(data: any, id: string): Observable<any> {
+    return this.httpClient.post(`${this.baseURL}clases/`, data)
+    console.log("aqui api addClase")
+  }
 }
 
 
